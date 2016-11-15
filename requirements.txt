@@ -1,0 +1,1 @@
+-e git+git@github.com:snyderp/pygmail.git@0e05ef8aea151ad3da96060c97fbbaad49395089#egg=pygmail
