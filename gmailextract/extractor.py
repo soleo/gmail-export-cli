@@ -11,7 +11,7 @@ class GmailExtractor(object):
     writes them to disk
     """
 
-    def __init__(self, dest, email, password, limit=None, batch=10, replace=False):
+    def __init__(self, dest, email, password, limit=None, batch=10):
         """
         Args:
             dest     -- the path on the file system where images should be
@@ -24,10 +24,7 @@ class GmailExtractor(object):
                        download from the gmail account.
             batch   -- the maximum number of messages to download from Gmail
                        at the same time.
-            replace -- whether to rewrite the messages in the Gmail account
-                       in place (True) or to just write a second, parallel
-                       copy of the altered message and leave the original
-                       version alone.
+           
 
         raise:
             ValueError -- If the given dest path to write extracted images to
@@ -44,7 +41,6 @@ class GmailExtractor(object):
 
         self.limit = limit
         self.batch = batch
-        self.replace = replace
         self.email = email
         self.password = password
 
@@ -98,7 +94,7 @@ class GmailExtractor(object):
         return len(gm_ids)
 
     def extract(self, callback=None):
-        """Extracts images from Gmail messages and writes them to the
+        """Extracts attachments from Gmail messages and writes them to the
         path set at instantiation.
 
         Keyword Args:
@@ -117,7 +113,7 @@ class GmailExtractor(object):
                         index of the current message being downloaded.
 
         Returns:
-            The number of images written to disk.
+            The number of attachments written to disk.
         """
         def _cb(*args):
             if callback:

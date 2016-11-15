@@ -16,8 +16,7 @@ parser.add_argument('-s', '--simultaneous', type=int, default=10,
 args = parser.parse_args()
 
 extractor = GmailExtractor(args.dest, args.email, args.password,
-                                limit=args.limit, batch=args.simultaneous,
-                                replace=args.write)
+                                limit=args.limit, batch=args.simultaneous)
 
 # Next, see if we can succesfully connect to and select a mailbox from
 # Gmail. If not, error out quick
