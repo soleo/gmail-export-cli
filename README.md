@@ -1,6 +1,6 @@
 # Gmail Export Command Line Tool
 
-Used for exporting attachments including png, jpg, gif, pdf etc. with simple command line. 
+Exporting attachments including png, jpg, gif, pdf etc. with simple command line from your gmail account.  
 
 ### Requirements
 
@@ -18,8 +18,6 @@ Used for exporting attachments including png, jpg, gif, pdf etc. with simple com
 | -s        | --simultaneous | The maximum number of messages that should be downloaded from GMail at a time (defaults to 10).|
 
 ### Run
-
-By default, it reads 10 message at one time, but you could change it by
 
 ```shell
 $ pip install --no-cache-dir -r requirements.txt
